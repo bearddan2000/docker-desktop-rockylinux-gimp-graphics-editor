@@ -14,10 +14,12 @@ RUN dnf update -y
 
 RUN dnf install -y $APP
 
+RUN dnf builddep -y mesa
+
 RUN adduser $USERNAME
 
 ENV HOME /home/$USERNAME
 
 USER $USERNAME
 
-CMD ["${APP_EXEC}", "--no-sandbox"]
+CMD ["/bin/chromium-browser", "--no-sandbox"]
