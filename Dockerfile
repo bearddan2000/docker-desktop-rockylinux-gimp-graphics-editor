@@ -1,8 +1,8 @@
-FROM fedora:latest
+FROM rockylinux:9
 
-ENV APP chromium
+ENV APP gimp
 
-ENV APP_EXEC chromium-browser
+ENV APP_EXEC gimp
 
 ENV DISPLAY :0
 
@@ -10,11 +10,9 @@ ENV USERNAME developer
 
 WORKDIR /app
 
-RUN dnf update -y
+RUN yum update -y
 
-RUN dnf install -y $APP
-
-RUN dnf builddep -y mesa
+RUN yum install -y $APP
 
 RUN adduser $USERNAME
 
@@ -22,4 +20,4 @@ ENV HOME /home/$USERNAME
 
 USER $USERNAME
 
-CMD ["/bin/chromium-browser", "--no-sandbox"]
+CMD $APP_EXEC

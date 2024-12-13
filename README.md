@@ -1,4 +1,4 @@
-# docker-desktop-fedora-chrome-web-browser
+# docker-desktop-rockylinux-gimp-graphics-editor
 
 ## Description
 This is a POC project to demonstrate chrome a web browser.
@@ -18,10 +18,10 @@ Supports X11 display forwarding from docker container.
 A word of warning, docker IS NOT a VPN; all web traffic can be seen by your network administrator.
 
 ## Tech stack
-- chrome
+- gimp
 
 ## Docker stack
-- fedora
+- rockylinux:9
 
 ## To run
 `sudo ./install.sh -u`
